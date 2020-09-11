@@ -1,12 +1,17 @@
 {
-  "extends": ["prettier", "prettier/@typescript-eslint"],
-  "plugins": ["cypress", "chai-friendly"],
+  "parserOptions": {
+    "parser": "@typescript-eslint-parser"
+  },
+  "extends": ["prettier", "prettier/@typescript-eslint","eslint:recommended", "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"],
+  "plugins": ["@typescript-eslint/eslint-plugin", "cypress", "chai-friendly"],
   "rules": {
     "cypress/no-assigning-return-values": "error",
     "cypress/assertion-before-screenshot": "warn",
     "cypress/no-force": "warn",
     "no-unused-expressions": 0,
     "chai-friendly/no-unused-expressions": 2,
+    "no-console": 1
   },
   "env": {
     "cypress/globals": true
