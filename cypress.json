@@ -1,0 +1,6 @@
+{
+  "video": false,
+  "baseUrl": "http://localhost:80",
+  "testFiles": "**/*.spec.ts",
+  "videoUploadOnPasses": false
+}
