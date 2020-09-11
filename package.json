@@ -33,10 +33,11 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
-    "sinon": "^1.17.5",
+    "istanbul": "^0.4.4",
     "mocha": "^3.0.0",
     "mocha-junit-reporter": "^1.12.1",
-    "istanbul": "^0.4.4",
-    "mongodb": "^2.2.5"
+    "mongodb": "^2.2.5",
+    "sinon": "^1.17.5",
+    "typescript": "^4.0.2"
   }
 }
