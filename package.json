@@ -31,8 +31,11 @@
     "connect-redis": "^3.2.0"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
+    "eslint": "^7.8.1",
     "istanbul": "^0.4.4",
     "mocha": "^3.0.0",
     "mocha-junit-reporter": "^1.12.1",
