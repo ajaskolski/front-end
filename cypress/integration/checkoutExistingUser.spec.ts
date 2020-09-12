@@ -1,4 +1,3 @@
-
 describe('Checkout flow', () => {
     context('logged in existing user', () => {
         it('should get to checkout through catalogue add to cart', () => {
