@@ -8,6 +8,7 @@ export const createUser = (username: string, password: string, email: string): s
         body: {username, password, email}
     }).then((response) => {
         expect(response.isOkStatusCode);
+        expect(response.body).to.have.property('id');
         return response.body.id
     })
 
