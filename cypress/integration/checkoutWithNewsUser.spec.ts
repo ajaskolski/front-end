@@ -1,37 +1,43 @@
 import {deleteUser, createUser} from '../support/commands'
+import {Basket, Catalogue, Home} from "../pages";
+
 let user;
+let id;
 
 describe('Verify cant process checkout without adress information for new user', () => {
     before(function () {
-        cy.task("freshUser").then((object) => {
+        return cy.task("freshUser").then((object) => {
             user = object;
-            user.id = createUser(user.name, user.password, user.email);
-        })
+            return createUser(user.name, user.password, user.email)
+        }).then((r) => {id = r})
     });
 
     after(function () {
-        deleteUser(user.id)
+        cy.get('#logout')
+            .click();
+        deleteUser(id)
     });
     context('new user without address', () => {
+        const productName = 'SuperSport XL';
+        const numberItems = 1;
+
         it('error should show up during processing the checkout', () => {
             cy.visit('');
-            cy.get('#tabCatalogue')
-                .click();
-            cy.get('[data-ats="button-add-to-cart-SuperSport XL"]')
-                .click();
-            cy.get('#numItemsInCart')
-                .contains('1')
-                .click();
-            cy.url().should('include', '/basket.html');
-            cy.get('#cart-list')
-                .find('.item')
-                .contains('SuperSport XL');
-            cy.get('[data-ats="input-quantity"]')
-                .should('have.value', 1);
-            cy.get('#orderButton')
-                .click();
-            cy.get('#user-message').should('be.visible')
-                .find('[class="alert alert-danger alert-dismissible"]');
+            Home
+                .clickTabCatalogue();
+            Catalogue
+                .addProductToCart(productName);
+            Catalogue
+                .verifyNumberItemsInCartAndGoToIt(numberItems);
+            cy.verifyUrl(Basket.pageUrl);
+            Basket
+                .verifyCartContainsItem(productName);
+            Basket
+                .verifyQuantity(numberItems);
+            Basket
+                .clickOrderButton();
+            Basket
+                .verifyErrorMessageShowedUp();
         });
     });
 });

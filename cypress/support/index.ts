@@ -18,3 +18,14 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+declare global {
+    namespace Cypress {
+        interface Chainable<Subject> {
+            verifyUrl(url: string): Cypress.Chainable<Response>;
+        }
+    }
+}
+Cypress.Commands.add('verifyUrl', (url: string) => {
+    cy.url().should('include', url)
+});

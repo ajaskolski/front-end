@@ -6,6 +6,7 @@
     "plugin:@typescript-eslint/recommended"],
   "plugins": ["@typescript-eslint/eslint-plugin", "cypress", "chai-friendly"],
   "rules": {
+    "@typescript-eslint/no-namespace": "off",
     "cypress/no-assigning-return-values": "error",
     "cypress/assertion-before-screenshot": "warn",
     "cypress/no-force": "warn",
