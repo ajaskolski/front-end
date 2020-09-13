@@ -2,11 +2,11 @@ export const Basket = {
     pageUrl: '/basket.html',
 
     verifyCartContainsItem(productName: string): void {
-        cy.get('#cart-list').find('.item').contains('SuperSport XL');
+        cy.get('#cart-list').find('.item').contains(productName);
     },
 
     verifyQuantity(numberItems: number): void {
-        cy.get('[data-ats="input-quantity"]').should('have.value', 1);
+        cy.get('[data-ats="input-quantity"]').should('have.value', numberItems);
     },
 
     clickOrderButton(): void {
