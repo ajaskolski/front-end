@@ -47,7 +47,7 @@ Every push to front-end repository master branch will trigger update of docker i
 Next step would be adding database for clean DDT firebase/mysql, linking pushes to CI/CD, put some visual testing with Percy or any similiar.
 
 
-## Node
+## Node 
 
 `npm install`
 

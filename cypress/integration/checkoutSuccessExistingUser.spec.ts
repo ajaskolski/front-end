@@ -18,7 +18,6 @@ describe('user should be able to checkout with every data provided', () => {
         Home.clickTabCatalogue();
 
         Catalogue.addProductToCart(productName);
-
         Catalogue.verifyNumberItemsInCartAndGoToIt(numberItems);
 
         cy.verifyUrl(Basket.pageUrl);

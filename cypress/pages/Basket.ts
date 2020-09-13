@@ -2,7 +2,7 @@ export const Basket = {
     pageUrl: '/basket.html',
 
     verifyCartContainsItem(productName: string): void {
-        cy.get('#cart-list').find('.item').contains(productName);
+        cy.get('#cart-list').find('.item').should('contain', productName);
     },
 
     verifyQuantity(numberItems: number): void {

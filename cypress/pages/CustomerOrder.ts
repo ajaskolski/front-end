@@ -5,32 +5,16 @@ export const CustomerOrder = {
     },
     verifySpecificItemInOrder(price: string, name: string): void {
         cy.get('#customer-order')
-            .find('#tableOrder')
-            .invoke('text')
-            .then((text) => {
-                expect(text).to.include(price);
-                expect(text).to.include(name);
-            });
+            .should('contain.text', price)
+            .should('contain.text', name)
     },
     verifyTotalPrice(priceTotal: string): void {
-        cy.get('#orderTotal')
-            .invoke('text')
-            .then((text) => {
-                expect(text).to.include(priceTotal);
-            });
+        cy.get('#orderTotal').should('contain.text', priceTotal)
     },
     verifyShippingPrice(shippingPrice: string): void {
-        cy.get('#orderShipping')
-            .invoke('text')
-            .then((text) => {
-                expect(text).to.include(shippingPrice);
-            });
+        cy.get('#orderShipping').should('contain.text', shippingPrice)
     },
     verifySubtotalPrice(subtotalPrice: string): void {
-        cy.get('#orderSubtotal')
-            .invoke('text')
-            .then((text) => {
-                expect(text).to.include(subtotalPrice);
-            });
+        cy.get('#orderSubtotal').should('contain.text', subtotalPrice)
     },
 };

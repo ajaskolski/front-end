@@ -5,6 +5,6 @@ export const Catalogue = {
         cy.get(`[data-ats="button-add-to-cart-${productName}"]`).click();
     },
     verifyNumberItemsInCartAndGoToIt(countItem: number): void {
-        cy.get('#numItemsInCart').contains(countItem, { timeout: 4000 }).click();
+        cy.get('#numItemsInCart').should('contain.text', countItem).click();
     },
 };

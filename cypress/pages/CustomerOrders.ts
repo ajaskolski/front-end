@@ -4,12 +4,7 @@ export const CustomerOrders = {
         cy.get('[class="label label-success"]').should('be.visible');
     },
     verifyPriceOrderWithShipping(price: string): void {
-        cy.get('#tableOrders tr')
-            .last()
-            .invoke('text')
-            .then((text) => {
-                expect(text).to.include(price);
-            });
+        cy.get('#tableOrders tr').last().should('contain.text', price)
     },
     clickButtonViewNewestOrder(): void {
         cy.get('[data-ats="button-view-order"]').last().click();
