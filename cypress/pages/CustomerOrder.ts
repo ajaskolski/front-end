@@ -4,17 +4,17 @@ export const CustomerOrder = {
         cy.get('[data-ats="img-item"]').should('be.visible');
     },
     verifySpecificItemInOrder(price: string, name: string): void {
-        cy.get('#customer-order')
+        cy.get('#tableOrder')
             .should('contain.text', price)
             .should('contain.text', name)
     },
     verifyTotalPrice(priceTotal: string): void {
-        cy.get('#orderTotal').should('contain.text', priceTotal)
+        cy.get('#orderTotal').should('have.text', priceTotal)
     },
     verifyShippingPrice(shippingPrice: string): void {
-        cy.get('#orderShipping').should('contain.text', shippingPrice)
+        cy.get('#orderShipping').should('have.text', shippingPrice)
     },
     verifySubtotalPrice(subtotalPrice: string): void {
-        cy.get('#orderSubtotal').should('contain.text', subtotalPrice)
+        cy.get('#orderSubtotal').should('have.text', subtotalPrice)
     },
 };
