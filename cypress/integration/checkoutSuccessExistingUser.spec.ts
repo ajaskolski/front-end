@@ -7,7 +7,6 @@ describe('user should be able to checkout with every data provided', () => {
         const productName = 'SuperSport XL';
         const numberItems = 1;
         const priceWithShipping = '$ 19.99';
-        const price = '$15.00';
 
         const priceTotal = '$19.99';
         const priceShipping = '$4.99';
@@ -32,7 +31,7 @@ describe('user should be able to checkout with every data provided', () => {
 
         cy.verifyUrl(CustomerOrder.pageUrl);
         CustomerOrder.waitForImgItem();
-        CustomerOrder.verifySpecificItemInOrder(price, productName);
+        CustomerOrder.verifySpecificItemInOrder(priceSubTotal, productName);
         CustomerOrder.verifyTotalPrice(priceTotal);
         CustomerOrder.verifyShippingPrice(priceShipping);
         CustomerOrder.verifySubtotalPrice(priceSubTotal);
