@@ -8,7 +8,7 @@ export const CustomerOrders = {
             .last()
             .invoke('text')
             .then((text) => {
-                expect(text).to.include('$ 19.99');
+                expect(text).to.include(price);
             });
     },
     clickButtonViewNewestOrder(): void {

@@ -4,7 +4,7 @@ import { Basket, Catalogue, Home } from '../pages';
 let user;
 let id;
 
-describe('checkout flow for user without adress', () => {
+describe('user without adress shouldnt be able to checkout', () => {
     it('error should show up during processing the checkout', () => {
         const productName = 'SuperSport XL';
         const numberItems = 1;

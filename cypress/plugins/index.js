@@ -20,12 +20,11 @@ const faker = require('faker');
 module.exports = (on, config) => {
     on('task', {
         freshUser() {
-            let user = {
+            return {
                 name: faker.name.firstName('male'),
                 email: faker.internet.email(),
                 password: 'SuperSecret',
             };
-            return user;
         },
     });
 };

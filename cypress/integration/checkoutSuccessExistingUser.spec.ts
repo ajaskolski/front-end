@@ -1,6 +1,6 @@
 import { Home, Catalogue, Basket, CustomerOrders, CustomerOrder } from '../pages';
 
-describe('Checkout flow with existing user', () => {
+describe('user should be able to checkout with every data provided', () => {
     it('should successfully buy specific item from catalogue', () => {
         const username = 'Eve_Berger'; //todo those data should be put in database
         const password = 'eve';
