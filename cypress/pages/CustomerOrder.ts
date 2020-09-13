@@ -27,7 +27,7 @@ export const CustomerOrder = {
                 expect(text).to.include(shippingPrice);
             });
     },
-    verifySubtotalPrice(subtotalPrice): void {
+    verifySubtotalPrice(subtotalPrice: string): void {
         cy.get('#orderSubtotal')
             .invoke("text")
             .then((text) => {

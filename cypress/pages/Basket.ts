@@ -1,5 +1,6 @@
 export const Basket = {
     pageUrl: '/basket.html',
+
     verifyCartContainsItem(productName: string): void {
         cy.get('#cart-list')
             .find('.item')
@@ -14,6 +15,10 @@ export const Basket = {
     clickOrderButton(): void {
         cy.get('#orderButton')
             .click()
+    },
+
+    verifyOrderButtonIsDisabled(): void {
+        cy.get('#orderButton').should('be.disabled')
     },
 
     verifyErrorMessageShowedUp(): void {
