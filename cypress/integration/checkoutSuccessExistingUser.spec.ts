@@ -1,4 +1,4 @@
-import { Home, Catalogue, Basket, CustomerOrders, CustomerOrder } from '../pages'
+import { Home, Catalogue, Basket, CustomerOrders, CustomerOrder } from '../pages';
 
 describe('Checkout flow with existing user', () => {
     it('should successfully buy specific item from catalogue', () => {
@@ -33,10 +33,9 @@ describe('Checkout flow with existing user', () => {
 
         cy.verifyUrl(CustomerOrder.pageUrl);
         CustomerOrder.waitForImgItem();
-
         CustomerOrder.verifySpecificItemInOrder(price, productName);
         CustomerOrder.verifyTotalPrice(priceTotal);
         CustomerOrder.verifyShippingPrice(priceShipping);
         CustomerOrder.verifySubtotalPrice(priceSubTotal);
-    })
+    });
 });

@@ -42,9 +42,9 @@ There is case using hardcoded data and case that creates its own user data and c
 
 Showed one of possible approaches to the topic. Used piece of page object patern, add some custom method to cy, add plugin with faker to create data in test.
 
-Next step would be adding database for clean DDT firebase/mysql
+Every push to front-end repository master branch will trigger update of docker image on dockerhub as latest tag.
 
-Every push to fron-end repository master branch will trigger update of docker image on dockerhub as latest tag.
+Next step would be adding database for clean DDT firebase/mysql, linking pushes to CI/CD, put some visual testing with Percy or any similiar.
 
 
 ## Node

@@ -1,13 +1,12 @@
 export const CustomerOrder = {
     pageUrl: '/customer-order.html',
     waitForImgItem(): void {
-        cy.get('[data-ats="img-item"]')
-            .should('be.visible');
+        cy.get('[data-ats="img-item"]').should('be.visible');
     },
-    verifySpecificItemInOrder(price:string, name: string): void {
+    verifySpecificItemInOrder(price: string, name: string): void {
         cy.get('#customer-order')
             .find('#tableOrder')
-            .invoke("text")
+            .invoke('text')
             .then((text) => {
                 expect(text).to.include(price);
                 expect(text).to.include(name);
@@ -15,21 +14,21 @@ export const CustomerOrder = {
     },
     verifyTotalPrice(priceTotal: string): void {
         cy.get('#orderTotal')
-            .invoke("text")
+            .invoke('text')
             .then((text) => {
                 expect(text).to.include(priceTotal);
             });
     },
     verifyShippingPrice(shippingPrice: string): void {
         cy.get('#orderShipping')
-            .invoke("text")
+            .invoke('text')
             .then((text) => {
                 expect(text).to.include(shippingPrice);
             });
     },
     verifySubtotalPrice(subtotalPrice: string): void {
         cy.get('#orderSubtotal')
-            .invoke("text")
+            .invoke('text')
             .then((text) => {
                 expect(text).to.include(subtotalPrice);
             });

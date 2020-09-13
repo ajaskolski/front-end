@@ -1,7 +1,7 @@
-import { Home,  } from './Home';
+import { Home } from './Home';
 import { Catalogue } from './Catalogue';
 import { Basket } from './Basket';
-import { CustomerOrders } from "./CustomerOrders";
-import { CustomerOrder } from "./CustomerOrder";
+import { CustomerOrders } from './CustomerOrders';
+import { CustomerOrder } from './CustomerOrder';
 
-export { Home, Catalogue, Basket, CustomerOrders, CustomerOrder }
+export { Home, Catalogue, Basket, CustomerOrders, CustomerOrder };

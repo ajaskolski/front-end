@@ -15,15 +15,15 @@
 // /**
 //  * @type {Cypress.PluginConfig}
 //  */
-const faker = require("faker");
+const faker = require('faker');
 
 module.exports = (on, config) => {
-    on("task", {
+    on('task', {
         freshUser() {
             let user = {
                 name: faker.name.firstName('male'),
                 email: faker.internet.email(),
-                password: "SuperSecret",
+                password: 'SuperSecret',
             };
             return user;
         },

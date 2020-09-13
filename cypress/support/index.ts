@@ -14,7 +14,7 @@
 // ***********************************************************
 
 // Import commands.ts using ES2015 syntax:
-import './commands'
+import './commands';
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
@@ -27,5 +27,5 @@ declare global {
     }
 }
 Cypress.Commands.add('verifyUrl', (url: string) => {
-    cy.url().should('include', url)
+    cy.url().should('include', url);
 });
