@@ -1,8 +1,8 @@
 export const CustomerOrder = {
     pageUrl: '/customer-order.html',
     waitForImgItem(): void {
-        cy.get('img')
-            .should('be.visible'); //data-ats="img-item"
+        cy.get('[data-ats="img-item"]')
+            .should('be.visible');
     },
     verifySpecificItemInOrder(price:string, name: string): void {
         cy.get('#customer-order')

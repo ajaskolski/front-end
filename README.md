@@ -6,7 +6,7 @@ First You need to download repos (both are public) ->
 
 ### 1
  [ajaskolski/microservices-demo-cypress](https://github.com/ajaskolski/microservices-demo-cypress)
- I forked front end repository and push my own docker image to introduce cypress.
+ I forked front end repository and push my own docker image to introduce cypress to
  ajaskolski/front-end
  to start just run docker containers:
  
@@ -26,19 +26,25 @@ First You need to download repos (both are public) ->
  
  `cypress open`
   
-  
-  
-
- 
- 
- 
- 
-
 
 #Summary
 
+Added docker image of front-end service with cypress tests.
+
+To easier locate elements without id I mostly add custom data attributes in html.
+For modern projects in react/vue there should shared file beetween src code and test code for updated values of locators.
+
 Application got some bugs so I choose sample paths viable to automate.
+
+Add whole configuration contains eslint, prettier and tsconfig.
+
+There is case using hardcoded data and case that creates its own user data and clean it afterwards with api methods.
+
+Showed one of possible approaches to the topic. Used piece of page object patern, add some custom method to cy, add plugin with faker to create data in test.
+
 Next step would be adding database for clean DDT firebase/mysql
+
+Every push to fron-end repository master branch will trigger update of docker image on dockerhub as latest tag.
 
 
 ## Node
