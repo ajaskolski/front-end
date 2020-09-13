@@ -2,5 +2,6 @@
   "video": false,
   "baseUrl": "http://localhost",
   "testFiles": "**/*.spec.ts",
-  "videoUploadOnPasses": false
+  "videoUploadOnPasses": false,
+  "fixturesFolder": false
 }
